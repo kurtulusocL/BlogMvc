@@ -1,0 +1,14 @@
+﻿
+@{ 
+    Layout = null;
+}
+
+<section>
+    <div class="row">
+        @Html.Action("TotalArticle","Admin")
+        @Html.Action("TotalPicture","Admin")
+        @Html.Action("TotalCategory","Admin")
+        @*@Html.Action("_TotalSkill", "Admin")*@
+        @Html.Action("TotalCategoryArticle","Admin")
+    </div>
+</section>

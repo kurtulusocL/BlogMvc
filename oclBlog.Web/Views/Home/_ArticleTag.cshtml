@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Tag>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li><a href="">@item.Name</a></li>
+}

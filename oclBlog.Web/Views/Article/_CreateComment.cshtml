@@ -1,0 +1,44 @@
+﻿@model ocLBlog.Entities.Models.Comment
+@{
+    Layout = null;
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        <span>@TempData["success"]</span>
+    </div>
+}
+
+@using (Html.BeginForm("_CreateComment", "Article", FormMethod.Post))
+{
+    <form novalidate="" method="post" id="commentform" class="comment-form" action="">
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="sewl-form-inputs no-padding-left">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <input id="website" name="NameSurname" value="" tabindex="1" placeholder="Name-Surname" type="text">
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <input id="email" name="MailAddress" value="" tabindex="3" placeholder="E-Mail Address" type="email">
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="sewl-form-textarea no-padding-right">
+                                <textarea id="comment" name="Text" tabindex="4" rows="3" cols="30" placeholder="Write Your Comments..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-submit">
+                    <div class="g-recaptcha" data-sitekey="6LcEEtkUAAAAAMulO9spSkNx0n4XS_YDFhyI4bEN"></div>
+                    <input name="submit" id="submit" value="Send Comment" type="submit">
+                </div>
+            </div>
+        </div>
+    </form>
+}
+

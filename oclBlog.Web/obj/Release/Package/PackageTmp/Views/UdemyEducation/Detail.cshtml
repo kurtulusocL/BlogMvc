@@ -1,0 +1,73 @@
+﻿@model ocLBlog.Entities.Models.Udemy
+@{
+    ViewBag.Title = "More Information of Online Lesson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-7">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li><a href="~/ocl-udemy/udemy-online-lesson">Udemy Lessons</a></li>
+                        <li>/</li>
+                        <li>@ViewBag.Title</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="blog-details-area ptb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-details-wrap">
+                    <div class="blog-details-img">
+                        <img src="~/img/udemy/@Model.Photo" style="max-width:720px;max-height:376px;min-height:376px;min-width:720px" alt="@Model.Title">
+                    </div>
+                    <div class="blog-details-content">
+                        <a href="@Model.WebsiteLink"><h3>@Model.Title</h3></a>
+                        <blockquote>
+                            @Model.Subtitle
+                        </blockquote>
+                        <p>@Model.Detail</p>
+                        <p>@Model.Description</p>
+                        <p>
+                            <a href="@Model.WebsiteLink" class="btn btn-info" target="_blank">Analyze to Course</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="quote-area bg-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12">
+                    <div class="quote-wrap">
+                        <h2>If you wanna ask something about this lessons you can visit while following to link you can ask me what do you want to ask.</h2>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-12">
+                    <div class="quote-wrap text-right">
+                        <a href="~/contact/me">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

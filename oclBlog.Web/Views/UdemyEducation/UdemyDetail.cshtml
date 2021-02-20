@@ -1,0 +1,39 @@
+﻿@model ocLBlog.Entities.Models.Udemy
+@{
+    ViewBag.Title = "Udemy Eğitimi Detay Bilgisi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="container" class="">
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-sm-10">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            @ViewBag.Title || <a href="~/UdemyEducation/yonas" class="btn btn-primary">Udemy Admin Sayfasına Dön</a> || <a href="~/UdemyEducation/Delete/@Model.Id" class="btn btn-danger">Ders Bilgilerini Sil</a>
+                        </header>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Ders Detayı</th>
+                                    <th>Ders Açılaması</th>
+                                    <th>Ders Linki</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>@Model.Detail</td>
+                                    <td>@Model.Description</td>
+                                    <td><a href="@Model.WebsiteLink" class="btn btn-info" target="_blank">Website</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

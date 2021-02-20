@@ -1,0 +1,16 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Skill>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="progress-wrap">
+        <p>@item.Name</p>
+        <div class="progress">
+            <div class="progress-bar wow slideInLeft" style="width:97%;">
+                <span class="progress-persent"><span>@item.Degree%</span></span>
+            </div>
+        </div>
+    </div>    
+}

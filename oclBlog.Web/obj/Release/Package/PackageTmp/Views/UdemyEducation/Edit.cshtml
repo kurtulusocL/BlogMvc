@@ -1,0 +1,74 @@
+﻿@model ocLBlog.Entities.Models.Udemy
+@{
+    ViewBag.Title = "Ders Bilgilerini Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="container" class="">
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            @ViewBag.Title
+                        </header>
+                        <div class="panel-body">
+                            <div class="form">
+                                <form class="cmxform form-horizontal tasi-form" id="signupForm" method="post" enctype="multipart/form-data" action="">
+                                    @using (Html.BeginForm("Create", "Udemy", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="form-group ">
+                                            <label for="firstname" class="control-label col-lg-2">Ders Başlığı</label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" id="firstname" name="Title" type="text" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="firstname" class="control-label col-lg-2">Ders Altbaşlığı</label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" id="firstname" name="Subtitle" type="text" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="firstname" class="control-label col-lg-2">Ders Sayfa Linki</label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" id="firstname" name="WebsiteLink" type="url" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="ccomment" class="control-label col-lg-2">Ders İçeriği</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control " id="ccomment" name="Detail"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="ccomment" class="control-label col-lg-2">Ders Açıklaması</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control " id="ccomment" name="Description"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="firstname" class="control-label col-lg-2">Resim Ekle</label>
+                                            <div class="col-lg-10">
+                                                <input class=" form-control" id="firstname" name="image" type="file" required />
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-2 col-lg-10">
+                                                <button class="btn btn-primary" type="submit">Ders Bilgilerini Güncelle</button>
+                                                <a href="~/Udemy/yonas"><button class="btn btn-danger" type="button">İptal Et</button></a>
+                                            </div>
+                                        </div>
+                                    }
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

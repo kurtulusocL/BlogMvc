@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Contact>
+@{
+    ViewBag.Title = "You can get in contact with me";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contact-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="contact-wrap form-style">
+                    <h3>Contact Me</h3>
+                    <div class="cf-msg"></div>
+                    @Html.Action("_Create","Contact")
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-wrap">
+                    <ul>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <p>+1829 558 3253</p>
+                            <p>+90544 4939494</p>
+                        </li>
+                       @Html.Action("SocialMediaContact","Home")
+                        <li>
+                            <i class="fa fa-location-arrow"></i>
+                            <p> Distrio Nacional, Santo Domingo, Dominican Republic</p>
+                            <p> Yenimahalle - Ankara - TURKEY</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

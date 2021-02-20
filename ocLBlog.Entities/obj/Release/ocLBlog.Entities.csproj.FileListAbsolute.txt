@@ -1,0 +1,12 @@
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\bin\Release\ocLBlog.Entities.dll.config
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\bin\Release\ocLBlog.Entities.dll
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\bin\Release\ocLBlog.Entities.pdb
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\bin\Release\EntityFramework.dll
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\bin\Release\EntityFramework.xml
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\obj\Release\ocLBlog.Entities.csprojAssemblyReference.cache
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\obj\Release\ocLBlog.Entities.csproj.CoreCompileInputs.cache
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\obj\Release\ocLBlog.Entities.csproj.CopyComplete
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\obj\Release\ocLBlog.Entities.dll
+C:\Users\kurtulusocL\Documents\Visual Studio 2017\Project\MyMvcProject\#Finished\ocLBlog\ocLBlog.Entities\obj\Release\ocLBlog.Entities.pdb

@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Picture>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <img src="~/img/foto/@item.ImageUrl" style="max-height:80px;max-width:80px;min-height:80px;min-width:80px" alt="@item.Article.Title">
+}

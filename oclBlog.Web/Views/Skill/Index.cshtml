@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Skill>
+@{
+    ViewBag.Title = "My Skills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li>My Skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="skill-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="skill-wrap section-title section-title2">
+                    @foreach (var item in Model)
+                    {
+                        <div class="progress-wrap">
+                            <p>@item.Name</p>
+                            <div class="progress">
+                                <div class="progress-bar wow slideInLeft" style="width:@item.Degree%;">
+                                    <span class="progress-persent"><span>@item.Degree</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

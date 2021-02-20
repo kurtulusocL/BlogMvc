@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.About>
+@{
+    ViewBag.Title = "About Me";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li>AboutMe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="about-area ptb-140">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="about-img black-opacity">
+                        <img src="~/img/about/@item.Photo" style="max-height:600px;max-width:350px;min-width:350px;min-height:600px" alt="@item.NameSurname" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="about-wrap">
+                        <h3>@item.Title - @item.NameSurname</h3>
+                        <p>@item.Subtitle</p>
+                        <p>@item.Description</p>
+                        <ul>
+                            @Html.Action("SocialMediaAbout", "Home")
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<div class="skill-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="skill-wrap section-title section-title2">
+                    <h2>My Skills</h2>
+                    @Html.Action("SkillAbout", "Home")
+                    <a href="~/skills/all-my-skill" class="btn btn-primary btn-xs">See All Of Them</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="faq-area ptb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                <div class="section-title text-center">
+                    <h2>Get In Touch</h2>
+                    <p>You wanna ask me something? Just drop me message</p>
+                </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+                <div class="faq-form form-style">
+                    <div class="cf-msg"></div>
+                    @Html.Action("_CreateQuestion", "Home")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="~/img/Logo 3.png">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Admin/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link href="~/Content/Admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/Admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/Content/Admin/css/owl.carousel.css" type="text/css">
+    <link href="~/Content/Admin/css/style.css" rel="stylesheet">
+    <link href="~/Content/Admin/css/style-responsive.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <section id="container">
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <a href="~/Admin/Index" class="logo">ocL<span> kurtulus</span></a>
+            <div class="nav notify-row" id="top_menu"></div>
+            <div class="top-nav ">
+                <ul class="nav pull-right top-menu">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="~/img/icon.png">
+                            <span class="username">@Session["KullanıcıAdıSoyadı"]</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <li><a href="~/Account/Logout"><i class="icon-suitcase"></i> Oturumu Kapat</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="icon-user"></i>
+                            <span>Ben</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="~/About/yonas" target="_blank">Hakkımda</a></li>
+                            <li><a href="~/Certificate/yonas" target="_blank">Sertifikalarım</a></li>
+                            <li><a href="~/Reference/yonas" target="_blank">Referanslarım</a></li>
+                            <li><a href="~/Portfolio/yonas" target="_blank">Portfolyom</a></li>
+                            <li><a href="~/Skill/yonas" target="_blank">Yetkinliklerim</a></li>
+                            <li><a href="~/UdemyEducation/yonas" target="_blank">Udemy Dersleri</a></li>
+                            <li><a href="~/SocialMedia/yonas" target="_blank">Sosyal Medya</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="~/Category/yonas" target="_blank">
+                            <i class="icon-folder-close-alt"></i>
+                            <span>Kategoriler </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Article/yonas" target="_blank">
+                            <i class="icon-archive"></i>
+                            <span>Makale İşlemleri </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Picture/yonas" target="_blank">
+                            <i class="icon-picture"></i>
+                            <span>Resimler </span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="icon-envelope"></i>
+                            <span>Gelenler</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="~/Contact/yonas" target="_blank">İletişimden Gelenler</a></li>
+                            <li><a href="~/Comment/yonas" target="_blank">Yorumlar</a></li>
+                            <li><a href="~/LearnPrice/yonas" target="_blank">Fiyat İstekleri</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="icon-adn"></i>
+                            <span>Admin Bölgesi</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="~/Admin/AdminList" target="_blank">Admin Listesi</a></li>
+                            <li class="sub-menu">
+                                <a href="">Admin İşlemleri</a>
+                                <ul class="sub">
+                                    <li><a href="~/Account/Register" target="_blank">Yeni Admin Kaydı</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        @RenderBody()
+        <footer class="site-footer">
+            <div class="text-center">
+                2019 - @DateTime.Now.Year &copy; kurtulusocal.
+                <a href="#" class="go-top">
+                    <i class="icon-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+    </section>
+
+    <script src="~/Content/Admin/js/jquery.js"></script>
+    <script src="~/Content/Admin/js/jquery-1.8.3.min.js"></script>
+    <script src="~/Content/Admin/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="~/Content/Admin/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Content/Admin/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/Admin/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="~/Content/Admin/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="~/Content/Admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="~/Content/Admin/js/owl.carousel.js"></script>
+    <script src="~/Content/Admin/js/jquery.customSelect.min.js"></script>
+    <script src="~/Content/Admin/js/respond.min.js"></script>
+    <script class="include" type="text/javascript" src="~/Content/Admin/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Content/Admin/assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="~/Content/Admin/js/common-scripts.js"></script>
+
+    <script src="~/Content/Admin/js/sparkline-chart.js"></script>
+    <script src="~/Content/Admin/js/easy-pie-chart.js"></script>
+    <script src="~/Content/Admin/js/count.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: true
+
+            });
+        });
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+    </script>
+    <script>
+
+        $(".knob").knob();
+
+    </script>
+</body>
+</html>

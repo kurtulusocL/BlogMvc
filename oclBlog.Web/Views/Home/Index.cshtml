@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<section class="slider-area">
+    <div class="slider-active dotate-style slider-next-prev-style">
+        @Html.Action("Slider", "Home")
+    </div>
+</section>
+<section class="about-area ptb-140">
+    <div class="container">
+        <div class="row">
+            @Html.Action("HomeAbout", "Home")
+        </div>
+    </div>
+    <br />  <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
+                <div class="section-title text-center">
+                    <h2>My Portfolios</h2>
+                    <p>Photos about my working for software If you wanna see portfolio photo more you can click<a href="~/portfolio/all-my-portfolios" class="btn btn-link" target="_blank">HERE</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row grid">
+            @Html.Action("HomePortfolio", "Home")
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
+                <div class="section-title text-center">
+                    <h2>My Certificates</h2>
+                    <p>My certificates about software and developer. If you wanna see certificates photo more you can click<a href="~/certificate/my-all-certificates" class="btn btn-link" target="_blank">HERE</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row grid">
+            @Html.Action("HomeCertificate", "Home")
+        </div>
+    </div>
+    <br />  <br />
+    <div class="featured-area pb-140">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
+                    <div class="section-title text-center">
+                        <h2>My References</h2>
+                        <p>If you wanna see more reference about me you can click<a href="~/my-references/all-my-references" class="btn btn-link" target="_blank">HERE</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="featured-wrap">
+                        <ul>
+                            @Html.Action("_HomeReference", "Home")
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="skill-wrap section-title section-title2">
+                        <h2>My Skills</h2>
+                        <p>If you wanna see skill more, you can click<a href="~/skills/all-my-skill" class="btn btn-link" target="_blank">HERE</a></p>
+                        @Html.Action("HomeSkill", "Home")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />  <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 wow fadeInUp">
+                <div class="section-title text-center">
+                    <h2>My Articles on Blog</h2>
+                    <p>My articles about software, Asp.Net, Ardunio. If you wanna see more article you can click<a href="~/my-articles/all-of-articles" class="btn btn-link" target="_blank">HERE</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @Html.Action("HomeArticles", "Home")
+        </div>
+    </div>
+</section>

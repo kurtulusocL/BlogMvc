@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Portfolio>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="slider-items">
+        <img src="~/img/port/@item.Photo" style="max-height:470px;max-width:756px;min-height:450px;min-width:756px;" alt="@item.Title" class="slider">
+        <div class="slider-content text-center">
+            <div class="table">
+                <div class="table-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <h2>Welcome to kurtulusocal.com</h2>
+                                <p>I am a software developer (C# and Mvc). If you wanna take information about me you can look this website or you can send me a message. Here some of some of little information buttons. </p>
+                                <ul>
+                                    <li><a href="~/about/kurtulusocal">Read More</a></li>
+                                    <li><a href="~/portfolio/all-my-portfolios">Look To My Portolio</a></li>
+                                    <li><a href="~/contact/me">Send Me Message</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

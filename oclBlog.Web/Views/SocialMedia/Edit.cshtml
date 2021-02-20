@@ -1,0 +1,73 @@
+﻿@model ocLBlog.Entities.Models.SocialMedia
+@{
+    ViewBag.Title = "Sosyal Medya Adreslerini Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="container" class="">
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            @ViewBag.Title
+                        </header>
+                        <div class="panel-body">
+                            <div class="form">
+                                <form class="cmxform form-horizontal tasi-form" id="signupForm" method="post" enctype="multipart/form-data" action="">
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-group ">
+                                        <label for="firstname" class="control-label col-lg-2">Facebook</label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="firstname" name="Facebook" type="url" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="firstname" class="control-label col-lg-2">Instagram</label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="firstname" name="Instagram" type="url" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="password" class="control-label col-lg-2">LinkedIn</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control " id="password" name="Instagram" type="url" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="ccomment" class="control-label col-lg-2">Mail Adresi</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control " id="password" name="MailAddress" type="email" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="ccomment" class="control-label col-lg-2">GitHub</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control " id="password" name="GitHub" type="url" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="ccomment" class="control-label col-lg-2">Udemy</label>
+                                        <div class="col-lg-10">
+                                            <input class="form-control " id="password" name="Udemy" type="url" />
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button class="btn btn-primary" type="submit">Sosyal Medya Hesabını Güncelle</button>
+                                            <a href="~/SocialMedia/yonas"><button class="btn btn-danger" type="button">İptal Et</button></a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,16 @@
+﻿@model ocLBlog.Entities.Models.Article
+@{
+    Layout = null;
+}
+
+<div class="block"><strong>@Model.Hit.Value.ToString()</strong> Etkileşim</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Article/_HitRead/',
+            data: { id=@Model.Id},
+            type: 'POST',
+        });
+    })
+</script>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Comment>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li class="comment even thread-even depth-1">
+        <div class="comment-wrap">
+            <div class="comment-theme">
+                <div class="comment-image">
+                    <img src="~/img/Logo 3.png" alt="@item.NameSurname">
+                </div>
+            </div>
+            <div class="comment-main-area">
+                <div class="comment-wrapper">
+                    <div class="sewl-comments-meta">
+                        <h4>@item.NameSurname <span class="comments-date">typed @item.CreatedDate.ToShortDateString()</span></h4>
+                    </div>
+                    <div class="comment-area">
+                        <p>@item.Text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+}

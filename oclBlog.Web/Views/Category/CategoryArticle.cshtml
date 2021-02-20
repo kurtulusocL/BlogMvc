@@ -1,0 +1,93 @@
+﻿@using ocLBlog.Web.Toolkits
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<ocLBlog.Entities.Models.Article>
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li>@ViewBag.Title</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="blog-area ptb-140 bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-6 col-xs-12 col">
+                            <div class="blog-wrap mb-30">
+                                <div class="blog-img">
+                                    @Html.Action("ArticlePhoto", "Home", new { id = item.Id })
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <li><a href=""><i class="fa fa-user"></i> @item.CreatedDate.ToShortDateString()</a></li>
+                                            <li><a href=""><i class="fa fa-comment"></i> @item.Comments.Count()</a></li>
+                                            <li><a href="">@Html.Action("_HitRead", "Article", new { id = item.Id })</a></li>
+                                        </ul>
+                                    </div>
+                                    <h3><a href="@Url.Action("Detail","Article",new { category=@Url.SEOURLTitle(item.Category.Name), newsTitle= @Url.SEOURLTitle(@item.Title), id=@item.Id })">@item.Title</a></h3>
+                                    <p>@Html.Raw(HttpUtility.HtmlDecode(ocLBlog.Web.Toolkits.ReadMore.SafeSubstring(item.Subtitle, 160)))</p>
+                                    <h3><a href="@Url.Action("CategoryArticle","Category", new{ id=@item.Id })">Category: @item.Category.Name</a></h3>
+                                    <a href="@Url.Action("Detail","Article",new { category=@Url.SEOURLTitle(item.Category.Name), newsTitle= @Url.SEOURLTitle(@item.Title), id=@item.Id })" class="btn-style">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="col-xs-12">
+                        <div class="pagination-wrap">
+                            @Html.PagedListPager(Model, Page => Url.Action("CategoryArticle", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 col">
+                <aside class="right-sidebar">
+                    <div class="category-wrap mb-30">
+                        <h3 class="sidebar-title">Categories</h3>
+                        <ul>
+                            @Html.Action("GetCategory", "Home")
+                        </ul>
+                    </div>
+                    <div class="related-post mb-30">
+                        <h3 class="sidebar-title">You can look</h3>
+                        <ul>
+                            @Html.Action("RandomArticle", "Home")
+                        </ul>
+                    </div>
+                    <div class="tags-wrap">
+                        <h3 class="sidebar-title">Some Tags</h3>
+                        <ul>
+                            @Html.Action("ArticleTag", "Home")
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,41 @@
+﻿@model ocLBlog.Entities.Models.Article
+@{
+    ViewBag.Title = "Yayındaki Makale Detayı";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="container" class="">
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-sm-10">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            @ViewBag.Title || <a href="~/Article/yonas" class="btn btn-primary">Makale Admin Sayfasına Dön</a> || <a href="~/Article/Delete/@Model.Id" class="btn btn-danger">Makale Bilgilerini Sil</a>
+                        </header>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Altbaşlık</th>
+                                    <th>Makale Metin</th>
+                                    <th>İkincil Metin</th>
+                                    <th>Makale Detayı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>@Model.Subtitle</td>
+                                    <td>@Model.Text</td>
+                                    <td>@Model.Subtext</td>
+                                    <td>@Model.Detail</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

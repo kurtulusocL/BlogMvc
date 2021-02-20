@@ -1,0 +1,18 @@
+﻿@using ocLBlog.Web.Toolkits
+@model IEnumerable<ocLBlog.Entities.Models.Article>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li class="related-post-items">
+        <div class="post-img">
+            @Html.Action("RandomArticlePhoto", "Home", new { id = item.Id })
+        </div>
+        <div class="post-info">
+            <a href="@Url.Action("Detail","Article",new { category=@Url.SEOURLTitle(item.Category.Name), newsTitle= @Url.SEOURLTitle(@item.Title), id=@item.Id })">@item.Title</a>
+            <p>@item.CreatedDate.ToShortDateString()</p>
+        </div>
+    </li>
+}

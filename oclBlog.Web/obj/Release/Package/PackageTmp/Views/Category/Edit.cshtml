@@ -1,0 +1,42 @@
+﻿@model ocLBlog.Entities.Models.Category
+@{
+    ViewBag.Title = "Makale Kategorisini Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="container" class="">
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            @ViewBag.Title
+                        </header>
+                        <div class="panel-body">
+                            <div class="form">
+                                <form class="cmxform form-horizontal tasi-form" id="signupForm" method="post" action="">
+                                    @Html.AntiForgeryToken()
+                                    <div class="form-group ">
+                                        <label for="firstname" class="control-label col-lg-2">Kategori Adı</label>
+                                        <div class="col-lg-10">
+                                            <input class=" form-control" id="firstname" name="Name" type="text" required />
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button class="btn btn-primary" type="submit">Kategoriyi Güncelle</button>
+                                            <a href="~/Category/yonas"><button class="btn btn-danger" type="button">İptal Et</button></a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

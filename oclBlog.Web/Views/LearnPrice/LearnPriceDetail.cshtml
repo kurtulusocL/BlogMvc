@@ -1,0 +1,44 @@
+﻿@model ocLBlog.Entities.Models.LearnPrice
+@{
+    ViewBag.Title = "Gelen Sipariş İsteği Detayı";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="container" class="">
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-sm-10">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            @ViewBag.Title || <a href="~/LearnPrice/yonas" class="btn btn-primary">Sipariş Admin Sayfasına Dön</a> || <a href="~/LearnPrice/Delete/@Model.Id" class="btn btn-danger">Siparişi Sil</a>
+                        </header>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Sitenin Türü</th>
+                                    <th>Sitenin Özellikleri</th>
+                                    <th>Kullanım Amacı</th>
+                                    <th>Ek Diller</th>
+                                    <th>Bitiş Zamanı</th>
+                                    <th>Örnek</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Model.SiteKind</td>
+                                    <td>@Model.SiteAttribute</td>
+                                    <td>@Model.AreasOfUsage</td>
+                                    <td>@Model.ChoiseLanguage</td>
+                                    <td>@Model.FinishingTime.ToShortDateString()</td>
+                                    <td>@Model.ForExpamle</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

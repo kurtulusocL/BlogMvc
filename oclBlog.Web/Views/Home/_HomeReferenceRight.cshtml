@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Reference>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li class="wow fadeInLeft" data-wow-delay=".1s">
+        <h3>@item.CreatedDate.ToShortDateString()</h3>
+        <div class="featured-content">
+           
+            <div class="featured-info">
+                <h4>@item.Name</h4>
+                <p>@Html.Raw(HttpUtility.HtmlDecode(ocLBlog.Web.Toolkits.ReadMore.SafeSubstring(item.Title, 55)))</p>
+            </div>
+        </div>
+    </li>
+}

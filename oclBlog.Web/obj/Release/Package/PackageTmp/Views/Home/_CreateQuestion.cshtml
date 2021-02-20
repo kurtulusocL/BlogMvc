@@ -1,0 +1,48 @@
+﻿@model ocLBlog.Entities.Models.Contact
+@{
+    Layout = null;
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        <span>@TempData["success"]</span>
+    </div>
+}
+else
+{
+    <div class="alert alert-success">
+        <span>@TempData["error"]</span>
+    </div>
+}
+
+
+@using (Html.BeginForm("_CreateQuestion", "Home", FormMethod.Post))
+{
+    <form action="" method="post" id="cf">
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-xs-12">
+                <span>Your Name Surname</span>
+                <input type="text" placeholder="Name-Surname" id="fname" name="NameSurname">
+            </div>
+            <div class="col-xs-12">
+                <span>Your Email</span>
+                <input type="email" placeholder="Email" id="email" name="MailAddress">
+            </div>
+            <div class="col-xs-12">
+                <span>Subject</span>
+                <input type="text" placeholder="Subject" id="subject" name="Subject">
+            </div>
+            <div class="col-xs-12">
+                <span>Your Messages</span>
+                <textarea class="contact-textarea" placeholder="Your Message" id="msg" name="Text"></textarea>
+            </div>
+            <div class="col-xs-12">
+                <div class="g-recaptcha" data-sitekey="6LcEEtkUAAAAAMulO9spSkNx0n4XS_YDFhyI4bEN"></div>
+                <button id="submit" class="cont-submit btn-contact btn-style" name="submit">Send Message</button>
+            </div>
+        </div>
+    </form>
+}
+

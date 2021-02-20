@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ocLBlog.Data.Identity.ApplicationUser>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="bio-row">
+            <p><span>Ad-Soyad </span>: @item.NameLastname</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Kullanıcı Adı </span>: @item.UserName</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Ülkeniz </span>: @item.Country</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Doğum Tarihi</span>: @item.Birthdate</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Şehir </span>: @item.City</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Göreviniz </span>: @item.Title</p>
+        </div>
+        <div class="bio-row">
+            <p><span>E-Mail Adres </span>: @item.Email</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Telefon No </span>: @item.PhoneNumber</p>
+        </div>
+
+    </div>
+}

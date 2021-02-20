@@ -1,0 +1,20 @@
+﻿@model ocLBlog.Entities.Models.Skill
+@{
+    Layout = null;
+}
+
+<div class="col-lg-6">
+    <div class="panel">
+        <div class="panel-body">
+            <div class="bio-chart">
+                <input class="knob" data-width="100" data-height="100" data-displayPrevious=true data-thickness=".2" value="@Model..Count()" data-fgColor="#cba4db" data-bgColor="#e8e8e8">
+            </div>
+            <div class="bio-desk">
+                <h4 class="purple">Yetkinlik</h4>
+                <p>Toplam : @Model..Count()</p>
+                <p>Son Eklenme : @Model.CreatedDate.ToShortDateString()</p>
+            </div>
+        </div>
+    </div>
+</div>
+

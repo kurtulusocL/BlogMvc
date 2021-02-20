@@ -1,0 +1,59 @@
+﻿@using ocLBlog.Web.Toolkits
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<ocLBlog.Entities.Models.Udemy>
+@{
+    ViewBag.Title = "My Online Education in Udemy.com";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-7">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li>@ViewBag.Title</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="service-area ptb-100">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12 col">
+                    <div class="service-wrap mb-30">
+                        <div class="service-img">
+                            <img src="~/img/udemy/@item.Photo" style="max-height:303px;max-width:379px;min-height:303px;min-width:379px;" alt="@item.Title" />
+                        </div>
+                        <div class="service-content">
+                            <h3>@item.Title</h3>
+                            <p>@Html.Raw(HttpUtility.HtmlDecode(ocLBlog.Web.Toolkits.ReadMore.SafeSubstring(item.Subtitle, 80)))</p>
+                            <a href="@Url.Action("Detail","UdemyEducation",new { newsTitle= @Url.SEOURLTitle(@item.Title), id=@item.Id })">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="col-xs-12">
+                <div class="pagination-wrap">
+                    @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

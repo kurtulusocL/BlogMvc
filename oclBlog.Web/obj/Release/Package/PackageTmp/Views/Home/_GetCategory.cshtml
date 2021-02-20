@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Category>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("CategoryArticle","Category", new{ id=@item.Id })">@item.Name (@item.Articles.Count())</a></li>   
+}

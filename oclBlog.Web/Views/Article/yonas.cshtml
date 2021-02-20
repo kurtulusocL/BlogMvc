@@ -1,0 +1,62 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<ocLBlog.Entities.Models.Article>
+@{
+    ViewBag.Title = "Yayındaki Makaleler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="container" class="">
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            @ViewBag.Title || <a href="~/Article/Create"><button class="btn btn-primary">Yeni Makale Ekle</button></a> || <a href="~/Picture/yonas"><button class="btn btn-info">Makale Resimleri</button></a>
+                        </header>
+                        <table class="table table-striped table-advance table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Başlık</th>
+                                    <th>Görüntülenme</th>
+                                    <th>Kategorisi</th>
+                                    <th>Etiketleri</th>
+                                    <th>Resim - Yorum Sayısı</th>
+                                    <th>Eklenme Tarihi</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Title</td>
+                                        <td>@item.Hit.Value.ToString()</td>
+                                        <td>@item.Category.Name</td>
+                                        <td>@item.Tag.Name</td>
+                                        <td>@item.Pictures.Count() || @item.Comments.Count()</td>
+                                        <td>@item.CreatedDate.ToShortDateString()</td>
+                                        <td>
+                                        <td>
+                                            <a href="~/Article/CreatePhoto/@item.Id"><button class="btn btn-primary btn-xs"><i class="icon-trash ">Resim Ekle</i></button></a>
+                                            <a href="~/Article/EditPhoto/@item.Id"><button class="btn btn-info btn-xs"><i class="icon-trash ">Resmi Güncelle</i></button></a>
+                                            <a href="~/Article/Edit/@item.Id"><button class="btn btn-success btn-xs"><i class="icon-trash ">Güncelle</i></button></a>
+                                            <a href="~/Article/Delete/@item.Id"><button class="btn btn-danger btn-xs"><i class="icon-trash ">Sil</i></button></a>
+                                            <a href="~/Article/TagDelete/@item.Id"><button class="btn btn-warning btn-xs"><i class="icon-trash ">Etiketi Sil</i></button></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+            <div class="pagination" align="center">
+                <div class="pagination-large">
+                    @Html.PagedListPager(Model, Page => Url.Action("yonas", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

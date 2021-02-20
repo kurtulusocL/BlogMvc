@@ -1,0 +1,29 @@
+﻿@using ocLBlog.Web.Toolkits
+@model IEnumerable<ocLBlog.Entities.Models.Article>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".1s">
+        <div class="blog-wrap">
+            <div class="blog-img">
+                @Html.Action("HomeArticlePhoto", "Home", new { id = item.Id })
+            </div>
+            <div class="blog-content">
+                <div class="blog-meta">
+                    <ul>
+                        <li><a href=""><i class="fa fa-user"></i> @item.CreatedDate.ToShortDateString()</a></li>
+                        <li><a href=""><i class="fa fa-comment"></i> @item.Comments.Count()</a></li>
+                        <li><a href="">@Html.Action("_HitRead", "Article", new { id = item.Id })</a></li>
+                    </ul>
+                </div>
+                <h3><a href="@Url.Action("Detail","Article",new { category=@Url.SEOURLTitle(item.Category.Name), newsTitle= @Url.SEOURLTitle(@item.Title), id=@item.Id })">@item.Title</a></h3>
+                <p>@Html.Raw(HttpUtility.HtmlDecode(ocLBlog.Web.Toolkits.ReadMore.SafeSubstring(item.Subtitle, 90)))</p>
+                <h3><a href="@Url.Action("CategoryArticle","Category", new{ id=@item.Id })" class="btn btn-link">Category: @item.Category.Name</a></h3>
+                <a href="@Url.Action("Detail","Article",new { category=@Url.SEOURLTitle(item.Category.Name), newsTitle= @Url.SEOURLTitle(@item.Title), id=@item.Id })" class="btn-style">Read More</a>
+            </div>
+        </div>
+    </div>
+}

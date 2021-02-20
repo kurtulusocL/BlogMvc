@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="main-content">
+    <section class="wrapper">       
+        <div class="row">
+            <aside class="profile-nav col-lg-3">
+                <section class="panel">
+                   @Html.Action("AdminInfo", "Admin")
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="~/Admin/Index"> <i class="icon-user"></i> Admin Profil</a></li>
+                        <li><a href="#"> <i class="icon-edit"></i> Profili Güncelle</a></li>
+                        <li><a href="~/Account/ChangePassword"> <i class="icon-edit"></i> Şifre Değiştir</a></li>
+                        <li><a href="~/Account/Register"> <i class="icon-edit"></i> Yeni Admin Kaydı</a></li>
+                        <li><a href="~/Admin/AdminList"> <i class="icon-edit"></i> Admin Listesi</a></li>
+                        <li><a href="~/Account/Logout"> <i class="icon-edit"></i> Çıkış Yap</a></li>
+                    </ul>
+                </section>
+            </aside>
+            <aside class="profile-info col-lg-9">                
+                <section class="panel">
+                    <div class="bio-graph-heading">
+                        Talih, sadece cesurlara yardım eder ve unutma ki vicdan, insanın içindeki tanrıdır. - Fortune, helps only those who are brave; and do not forget that the conscience is a god inside to peoples. - La fortuna, solo ayuda a los valientes; y no olvides que la conciencia es un dios dentro de los pueblos.
+                    </div>
+                    <div class="panel-body bio-graph-info">
+                        <h1>Kayıtlı Bilgileriniz</h1>
+                        @Html.Action("AdminInformation","Admin")
+                    </div>
+                </section>
+                @Html.Action("_AdminIstatistic","Admin")
+            </aside>
+        </div>
+    </section>
+</section>
+<section id="container" class="">
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Gelen Mesajlar
+                            <span class="tools pull-right">
+                                <a class="icon-chevron-down" href="javascript:;"></a>
+                                <a class="icon-remove" href="javascript:;"></a>
+                            </span>
+                        </header>
+                        @Html.Action("ContactAdmin", "Admin")
+                    </section>
+                </div>
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Gelen Yorumlar
+                            <span class="tools pull-right">
+                                <a class="icon-chevron-down" href="javascript:;"></a>
+                                <a class="icon-remove" href="javascript:;"></a>
+                            </span>
+                        </header>
+                        @Html.Action("CommentAdmin", "Admin")
+                    </section>
+                </div>
+                <div class="col-lg-11">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Gelen Fiyat İstekleri
+                            <span class="tools pull-right">
+                                <a class="icon-chevron-down" href="javascript:;"></a>
+                                <a class="icon-remove" href="javascript:;"></a>
+                            </span>
+                        </header>
+                        @Html.Action("LearnPriceAdmin", "Admin")
+                    </section>
+                </div>
+            </div>
+            </section>
+        </section>
+    </section>

@@ -1,0 +1,56 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<ocLBlog.Entities.Models.Reference>
+@{
+    ViewBag.Title = "My References";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li>My References</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="service-area home2-service-area ptb-100">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12 col">
+                    <div class="service-wrap">
+                        <div class="service-content">
+                            <h3>@item.Title</h3>
+                            <h5>@item.Name</h5>
+                            <p>@item.Description</p>
+                            <a href="@item.Website" target="_blank">Look to Reference</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="pagination">
+                <div class="pagination-centered">
+                    @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

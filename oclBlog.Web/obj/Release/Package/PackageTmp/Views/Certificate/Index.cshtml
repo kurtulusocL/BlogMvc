@@ -1,0 +1,77 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<ocLBlog.Entities.Models.Certificate>
+@{
+    ViewBag.Title = "My Certificate About My Skills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li>@ViewBag.Title</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="porftolio-area ptb-100">
+    <div class="container">
+        <div class="row grid">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 portfolio clean col-sm-6 col-xs-12 col">
+                    <div class="portfolio-wrap">
+                        <div class="overlay">
+                            <h3>@item.Title</h3>
+                            <p>@item.Subtitle</p>
+                            <p>Issuing Authority: @item.FromWhere</p>
+                            <p>Certificate Date: @item.CertificateDate.ToShortDateString()</p>
+                        </div>
+                        <div class="portfolio-img">
+                            <img src="~/img/certificate/@item.Photo" style="max-height:257px;max-width:345px;min-height:257px;min-width:345px;" alt="@item.Title" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="paginate_active">
+                    @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="quote-area bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-xs-12">
+                <div class="quote-wrap">
+                    <h2>Ask me something or drop me message =></h2>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="quote-wrap text-right">
+                    <a href="~/Contact/Index">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

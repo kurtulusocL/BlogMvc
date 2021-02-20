@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.About>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-md-12 col-xs-12 wow fadeInRight">
+        <div class="about-wrap">
+            <h2>@item.Title</h2>
+            <p>@Html.Raw(HttpUtility.HtmlDecode(ocLBlog.Web.Toolkits.ReadMore.SafeSubstring(item.Description, 399))+"...") <a href="~/about/kurtulus-ocal" target="_blank" class="btn btn-info btn-xs">Read More</a></p>     
+            <ul>
+                @Html.Action("HomeSocialMedia", "Home")
+            </ul>
+        </div>
+    </div>
+}

@@ -1,0 +1,90 @@
+﻿@model ocLBlog.Entities.Models.Article
+@{
+    ViewBag.Title = "Read To Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcumb-area black-opacity bg-img-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li>/</li>
+                        <li><a href="~/Article/Index">Blog</a></li>
+                        <li>/</li>
+                        <li>@ViewBag.Title</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="blog-details-area ptb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div class="blog-details-wrap">
+                    <div class="blog-details-img">
+                        <div class="single-service-active">
+                            @Html.Action("ArticleDetailPhoto", "Home", new { id = Model.Id })
+                        </div>
+                    </div>
+                    <div class="blog-details-content">
+                        <h3>@Model.Title</h3>
+                        <p>@Model.Subtitle</p>
+                        <p>@Model.Text</p>
+                        <p>@Model.Subtext</p>
+                        <p>@Model.Detail </p>
+                        <ul>
+                            <li>Category:<a href="" class="btn btn-link" target="_blank">@Model.Category.Name</a></li>
+                            <li>@Model.Hit.Value.ToString() people did read</li>
+                        </ul>
+                    </div>
+                    <div class="comment-main">
+                        <h3 class="blog-title ">Comments</h3>
+                        <ol class="comments">
+                            @Html.Action("ArticleComment", "Comment", new { id = Model.Id })
+                        </ol>
+                    </div>
+                    <div id="respond" class="sewl-comment-form comment-respond">
+                        <h3 id="reply-title" class="blog-title">Type Comment or Ask Something</h3>
+                        @Html.Action("_CreateComment", "Article")
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 col">
+                <aside class="right-sidebar">
+                    <div class="category-wrap mb-30">
+                        <h3 class="sidebar-title">Categories</h3>
+                        <ul>
+                            @Html.Action("GetCategory", "Home")
+                        </ul>
+                    </div>
+                    <div class="related-post mb-30">
+                        <h3 class="sidebar-title">Also You Can Look</h3>
+                        <ul>
+                            @Html.Action("RandomArticle", "Home")
+                        </ul>
+                    </div>
+                    <div class="tags-wrap">
+                        <h3 class="sidebar-title">Tags</h3>
+                        <ul>
+                            @Html.Action("ArticleTag", "Home")
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

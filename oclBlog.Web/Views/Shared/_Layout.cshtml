@@ -1,0 +1,151 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>kurtulusocL | @ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="kurtulus ocal, kurtuluş öcal, web developer, internet sitesi yapımı, web application, API, webapi, web api, web site, internet sitesi, web page, internet sayfası, internet sitesi yaptırma, site projesi" />
+    <link rel="shortcut icon" type="image/png" href="~/img/Logo 3.png">
+    <link rel="stylesheet" href="~/Content/ocL/assets/css/bootstrap.min.css">
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/ocL/assets/css/animate.css">
+    <link rel="stylesheet" href="~/Content/ocL/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/ocL/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/ocL/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/ocL/assets/css/slicknav.min.css">
+    <link rel="stylesheet" href="~/Content/ocL/assets/css/styles.css">
+    <link rel="stylesheet" href="~/Content/ocL/assets/css/responsive.css">
+    <script src="~/Content/ocL/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133551044-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133551044-1');
+    </script>
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e4f0ddfbd76de00122c21fd&product=inline-share-buttons&cms=sop' async='async'>
+    </script>
+</head>
+<body>
+    <div id="cssLoader3" class="preloder-wrap">
+        <div class="loader">
+            <div class="child-common child4"></div>
+            <div class="child-common child3"></div>
+            <div class="child-common child2"></div>
+            <div class="child-common child1"></div>
+        </div>
+    </div>
+    <header class="header-area" id="sticky-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-8 col-xs-6">
+                    <div class="logo">
+                        <h1><a href="~/Home/Index">kurtulusocal</a></h1>
+                    </div>
+                </div>
+                <div class="col-md-8 hidden-sm hidden-xs">
+                    <div class="mainmenu">
+                        <ul id="navigation">
+                            <li class="active"><a href="~/Home/Index">Home</a></li>
+                            <li class=""><a href="~/about/kurtulus-ocal">About Me</a></li>
+                            <li class=""><a href="~/my-articles/all-of-articles">Blog</a></li>
+                            @*<li class=""><a href="~/ocl-udemy/udemy-online-lesson">Udemy Lessons</a></li>*@
+                            <li class="">
+                                <a href="">My Skills <i class="fa fa-angle-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="~/certificate/my-all-certificates">My Certificates</a></li>
+                                    <li><a href="~/portfolio/all-my-portfolios">My Portfolios</a></li>
+                                    <li><a href="~/my-references/all-my-references">My References</a></li>
+                                    <li><a href="~/skills/all-my-skill">My Skills</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">Contact <i class="fa fa-angle-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="~/contact/me">Contact</a></li>
+                                    <li><a href="~/price/orderproject">Ask Price</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-2 col-xs-3"></div>
+                <div class="col-sm-2 clear col-xs-3 hidden-md hidden-lg">
+                    <div class="responsive-menu-wrap floatright"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12  col wow fadeInUp" data-wow-delay=".1s">
+                        <div class="footer-widget footer-logo">
+                            @Html.Action("AboutShared","Home")
+                            <ul>
+                                <li><i class="fa fa-phone"></i> +905444939494</li>
+                                <li><i class="fa fa-phone"></i> +18295583253</li>
+                                <li><i class="fa fa-envelope"></i> kurtulusocal@outlook.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".2s">
+                        <div class="footer-widget footer-menu">
+                            <h2>Quick Menu</h2>
+                            <ul>
+                                <li><a href="~/Home/Index">Home</a></li>
+                                <li><a href="~/about/kurtulus-ocal">About Me</a></li>
+                                <li><a href="~/portfolio/all-my-portfolios">Portfolios</a></li>
+                                <li><a href="~/my-references/all-my-references">References</a></li>
+                                <li><a href="~/certificate/my-all-certificates">Certificates</a></li>
+                                <li><a href="~/skills/all-my-skill">Skill</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 col wow fadeInUp" data-wow-delay=".3s">
+                        <div class="footer-widget footer-menu">
+                            <h2>ocL Menu</h2>
+                            <ul>
+                                <li><a href="~/my-articles/all-of-articles">Blog</a></li>
+                                @*<li><a href="~/ocl-udemy/udemy-online-lesson">Udemy Lessons</a></li>*@
+                                <li><a href="~/contact/me">Contact</a></li>
+                                <li><a href="~/price/orderproject">Ask Price</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        Copyright &copy;
+                        2019 - @DateTime.Now.Year All rights reserved | This website uses Google Analytics data. <a href="https://www.kurtulusocal.com" style="color: white;">kurtulusocL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/Content/ocL/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/ocL/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/ocL/assets/js/owl.carousel.min.js"></script>
+    <script src="~/Content/ocL/assets/js/counterup.main.js"></script>
+    <script src="~/Content/ocL/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Content/ocL/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/Content/ocL/assets/js/jquery.waypoints.min.js"></script>
+    <script src="~/Content/ocL/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/ocL/assets/js/jquery.slicknav.min.js"></script>
+    <script src="~/Content/ocL/assets/js/snake.min.js"></script>
+    <script src="~/Content/ocL/assets/js/wow.min.js"></script>
+    <script src="~/Content/ocL/assets/js/plugins.js"></script>
+    <script src="~/Content/ocL/assets/js/scripts.js"></script>
+</body>
+</html>

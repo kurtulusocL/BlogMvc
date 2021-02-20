@@ -1,0 +1,16 @@
+﻿@model IEnumerable<ocLBlog.Data.Identity.ApplicationUser>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="user-heading round">
+        <a href="~/Admin/Index">
+            <img src="~/img/Logo 3.png" alt="">
+        </a>
+        <h1>@item.NameLastname</h1>
+        <p>@item.UserName</p>
+        <p>@item.Email</p>
+    </div>
+}

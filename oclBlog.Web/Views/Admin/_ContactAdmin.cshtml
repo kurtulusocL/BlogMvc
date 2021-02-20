@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Contact>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="panel-body">
+        <div class="timeline-messages">
+            <div class="msg-time-chat">
+                <a href="" class="message-img"><img class="avatar" src="~/img/Logo 2.png" style="max-height:70px;max-width:50px;min-height:70px;min-width:50px;" alt=""></a>
+                <div class="message-body msg-in">
+                    <span class="arrow"></span>
+                    <div class="text">
+                        <p class="attribution"><a href="~/Contact/ContactDetail/@item.Id">@item.NameSurname</a> @item.CreatedDate.ToShortDateString()</p>
+                        <p>@item.Subject</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

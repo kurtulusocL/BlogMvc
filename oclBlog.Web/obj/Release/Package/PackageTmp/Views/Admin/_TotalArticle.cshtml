@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ocLBlog.Entities.Models.Article>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-6">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="bio-chart">
+                    <input class="knob" data-width="100" data-height="100" data-displayPrevious=true data-thickness=".2" value="@item.Category.Articles.Count()" data-fgColor="#e06b7d" data-bgColor="#e8e8e8">
+                </div>
+                <div class="bio-desk">
+                    <h4 class="red"> Makale</h4>
+                    <p>Toplam : @item.Category.Articles.Count()</p>
+                    <p>Son Eklenme : @item.CreatedDate.ToShortDateString()</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}

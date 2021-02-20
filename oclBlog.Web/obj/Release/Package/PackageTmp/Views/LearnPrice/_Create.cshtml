@@ -1,0 +1,63 @@
+﻿@model ocLBlog.Entities.Models.LearnPrice
+@{
+    Layout = null;
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        <span>@TempData["success"]</span>
+    </div>
+}
+else
+{
+    <div class="alert alert-success">
+        <span>@TempData["error"]</span>
+    </div>
+}
+
+
+@using (Html.BeginForm("_Create", "LearnPrice", FormMethod.Post))
+{
+    <form action="mail.php" method="post" id="cf">
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-xs-10">
+                <input type="text" placeholder="Website Kind" id="fname" name="SiteKind">
+            </div>
+            <div class="col-xs-10">
+                <textarea class="contact-textarea" placeholder="Site Attributes" id="msg" name="SiteAttribute"></textarea>
+            </div>
+            <div class="col-xs-10">
+                <input type="text" placeholder="Website areas of use" id="email" name="AreasOfUsage">
+            </div>
+            <div class="col-xs-10">
+                <input type="text" placeholder="website language" id="subject" name="ChoiseLanguage">
+            </div>
+            <div class="col-xs-10">
+                <strong> Project Fisnishing Time</strong>
+                <input type="date" id="subject" name="FinishingTime">
+            </div>
+            <div class="col-xs-10">
+                <input type="text" placeholder="Sample Website" id="subject" name="ForExpamle">
+            </div>
+            <div class="col-xs-10">
+                <input type="text" placeholder="Name-Surname" id="fname" name="YourNameSurname">
+            </div>
+            <div class="col-xs-10">
+                <input type="text" placeholder="Phone Number" id="email" name="YourPhoneNumber">
+            </div>
+            <div class="col-xs-10">
+                <input type="email" placeholder="MailAddress" id="subject" name="YourMailAddress">
+            </div>
+            <div class="col-xs-10">
+                <input type="text" placeholder="City and Country" id="subject" name="YourCityandCountry">
+            </div>
+            <hr />
+            <div class="col-xs-12">
+                <div class="g-recaptcha" data-sitekey="6LcEEtkUAAAAAMulO9spSkNx0n4XS_YDFhyI4bEN"></div>
+                <button id="submit" class="cont-submit btn-contact" name="submit">Send Form</button>
+            </div>
+        </div>
+    </form>
+}
